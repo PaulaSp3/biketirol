@@ -63,3 +63,14 @@ footer {
 footer nav {
     display: inline-block;
 }
+
+#profile {
+    border: 1px solid gray;
+    margin-top: 0.3em;
+    padding: 0.5em;
+}
+.bike-tirol {
+    /* --ele-area: seagreen; */
+    --ele-area: #2e8b57a1;
+    --ele-bg: white;
+}
