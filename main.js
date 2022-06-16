@@ -84,4 +84,8 @@ let gpxTrack = new L.GPX("./data/31.gpx", {
         iconAnchor: [16, 37],
         popupAnchor: [0, -37]
     },
+    polyline_options: {
+        color: "black",
+        dashArray: [2, 5],
+    },
 }).addTo(overlays.gpx);
