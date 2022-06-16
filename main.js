@@ -94,4 +94,19 @@ let gpxTrack = new L.GPX("./data/31.gpx", {
 gpxTrack.on("loaded", function(evt) {
     // Ausschnitt auf den GPX-Track setzen
     map.fitBounds(evt.target.getBounds());
+
+    // GPX-Track Eigenschaften als Popup anzeigen
+  evt.target.bindPopup(`
+  <h3>${evt.target.get_name()}</h3>
+  <ul>
+      <li>Streckenlänge: ${Math.round(evt.target.get_distance()/1000)} km</li>
+      <li>tiefster Punkt: ${evt.target.get_elevation_min()} m</li>
+      <li>höchster Punkt: ${evt.target.get_elevation_max()} m</li>
+      <li>Höhenmeter bergauf: ${Math.round(evt.target.get_elevation_gain())} m</li>
+      <li>Höhenmeter bergab: ${Math.round(evt.target.get_elevation_loss())} m</li>
+  </ul>
+`);
 });
+
+  
+
