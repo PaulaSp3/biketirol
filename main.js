@@ -108,5 +108,9 @@ gpxTrack.on("loaded", function(evt) {
 `);
 });
 
-  
+let controlElevation = L.control.elevation({}).addTo(map);
+gpxTrack.on("addline", function(evt) {
+    // Höhenprofil aktualisieren
+    controlElevation.addData(evt.line);
+});
 
