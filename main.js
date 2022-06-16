@@ -108,7 +108,13 @@ gpxTrack.on("loaded", function(evt) {
 `);
 });
 
-let controlElevation = L.control.elevation({}).addTo(map);
+let controlElevation = L.control.elevation({
+    time: false,
+      detached: true,
+      theme: 'bike-tirol',
+      elevationDiv: "#profile",
+      height: 300,
+}).addTo(map);
 gpxTrack.on("addline", function(evt) {
     // Höhenprofil aktualisieren
     controlElevation.addData(evt.line);
